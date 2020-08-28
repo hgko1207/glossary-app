@@ -30,6 +30,10 @@ public class Word implements Domain {
 	/** 한글명 - 시스템에서 사용하는 단어를 한글명 혹은 영어(고유단어)로 등록 */
 	@Column(length = 20, nullable = false)
     private String name;
+	
+	/** 영문약어 - 한글명에 대한 영문 약어를 등록한다. 중복이 되어서는 안된다. */
+	@Column(length = 20, nullable = false)
+	private String abbreviation;
     
     /** 동의어 - 한글명과 동일한 뜻을 가지는 단어를 등록 */
 	@Column(length = 20)
