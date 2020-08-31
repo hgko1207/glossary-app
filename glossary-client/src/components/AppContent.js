@@ -9,7 +9,7 @@ const { Content } = Layout;
 
 const AppContent = () => {
   return (
-    <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
+    <Content style={{ margin: '24px 16px', background: '#fff', minHeight: 280 }}>
       <Route exact path="/" component={Dashboard} />
       <Route path="/word" component={Word} />
     </Content>

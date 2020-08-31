@@ -1,7 +1,17 @@
 import React from 'react';
+import { PageHeader } from 'antd';
 
 const Dashboard = () => {
-  return <div style={{ textAlign: 'center' }}>Dashboard</div>;
+  return (
+    <>
+      <PageHeader
+        className="site-page-header"
+        //onBack={() => null}
+        title="Dashboard"
+        subTitle="This is a subtitle"
+      />
+    </>
+  );
 };
 
 export default Dashboard;

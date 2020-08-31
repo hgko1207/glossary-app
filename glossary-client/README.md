@@ -1,6 +1,6 @@
 # 용어 사전 앱
 
-Antd Design 사용한 React 기반 용어 사전 관리 사이트 개발
+Ant Design 사용한 React 기반 용어 사전 관리 사이트 개발
 
 ## Start
 
@@ -25,7 +25,8 @@ npm i -D eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks
 ## Features
 
 - React Hooks
-- antd design
+- React Router
+- ant design
 - eslint
 
 ## React Hooks

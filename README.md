@@ -17,7 +17,7 @@ Spring Boot, React 및 Ant Design을 사용하여 용어 사전 정리하는 앱
 ### Front Server
 
 - React
-- Antd Design
+- Ant Design
 
 ### 참조
 
