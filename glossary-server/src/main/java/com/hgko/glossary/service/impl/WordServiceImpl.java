@@ -7,12 +7,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hgko.glossary.domain.db.Word;
+import com.hgko.glossary.domain.param.SearchParam;
 import com.hgko.glossary.repository.WorkRepository;
-import com.hgko.glossary.service.WorkService;
+import com.hgko.glossary.service.WordService;
 
 @Transactional
 @Service
-public class WordServiceImpl implements WorkService {
+public class WordServiceImpl implements WordService {
 
 	@Autowired
 	private WorkRepository workRepository;
@@ -54,5 +55,10 @@ public class WordServiceImpl implements WorkService {
 	
 	private boolean isNew(Word domain) {
 		return !workRepository.existsById(domain.getId());
+	}
+
+	@Override
+	public List<Word> getList(SearchParam param) {
+		return getList();
 	}
 }
