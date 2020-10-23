@@ -57,6 +57,7 @@ public class WordServiceImpl implements WordService {
 		return !workRepository.existsById(domain.getId());
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public List<Word> getList(SearchParam param) {
 		return getList();

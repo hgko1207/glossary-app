@@ -27,11 +27,21 @@ public class WordController {
 	@Autowired
 	private WordService wordService;
 
+	/**
+	 * 단어 조회
+	 * @param param
+	 * @return
+	 */
 	@GetMapping("list")
 	public ResponseEntity<?> list(SearchParam param) {
 		return new ResponseEntity<>(wordService.getList(param), HttpStatus.OK);
 	}
 	
+	/**
+	 * 단어 등록
+	 * @param word
+	 * @return
+	 */
 	@PostMapping("regist")
 	public ResponseEntity<?> regist(Word word) {
 		if (wordService.regist(word)) {
@@ -41,6 +51,11 @@ public class WordController {
 		return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
 	}
 	
+	/**
+	 * 단어 수정
+	 * @param word
+	 * @return
+	 */
 	@PutMapping("update")
 	public ResponseEntity<?> update(Word word) {
 		if (wordService.update(word)) {
@@ -50,6 +65,11 @@ public class WordController {
 		return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
 	}
 	
+	/**
+	 * 단어 삭제
+	 * @param word
+	 * @return
+	 */
 	@DeleteMapping("delete")
 	public ResponseEntity<?> delete(Word word) {
 		if (wordService.delete(word.getId())) {

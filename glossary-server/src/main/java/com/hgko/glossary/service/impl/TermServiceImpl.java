@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hgko.glossary.domain.db.Term;
+import com.hgko.glossary.domain.param.SearchParam;
 import com.hgko.glossary.repository.TermRepository;
 import com.hgko.glossary.service.TermService;
 
@@ -54,5 +55,11 @@ public class TermServiceImpl implements TermService {
 	
 	private boolean isNew(Term domain) {
 		return !termRepository.existsById(domain.getId());
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<Term> getList(SearchParam param) {
+		return getList();
 	}
 }
