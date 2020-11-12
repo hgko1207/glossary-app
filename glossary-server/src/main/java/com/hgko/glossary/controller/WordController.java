@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,13 +27,21 @@ public class WordController {
 	
 	@Autowired
 	private WordService wordService;
+	
+	/**
+	 * 목록 화면
+	 * @param model
+	 */
+	@GetMapping("list")
+    public void list(Model model) {
+    }
 
 	/**
 	 * 단어 조회
 	 * @param param
 	 * @return
 	 */
-	@GetMapping("list")
+	@PostMapping("search")
 	public ResponseEntity<?> list(SearchParam param) {
 		return new ResponseEntity<>(wordService.getList(param), HttpStatus.OK);
 	}
