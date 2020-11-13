@@ -17,37 +17,33 @@ import com.hgko.glossary.domain.Domain;
 import lombok.Data;
 
 /**
- * 용어 관리 테이블 도메인
+ * 약어 관리 테이블 도메인
  * 
  * @author hgko
  *
  */
-@Entity
-@Table(name = "tb_term")
 @Data
-public class Term implements Domain {
+@Entity
+@Table(name = "tb_ㅁbbreviation")
+public class Abbreviation implements Domain {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
-	/** 한글명 */
+	/** 약어 */
 	@Column(length = 45, nullable = false)
 	private String name;
 	
-	/** 영문명 */
-	@Column(length = 45, nullable = false)
-	private String englishName;
+	/** 약어 풀이 */
+	@Column(length = 255, nullable = false)
+	private String fullName;
 	
-	/** 구분 */
-	@Column(length = 25, nullable = false)
-	private String type;
-	
-    /** 설명 - 한글명에 대한 설명을 등록 */
+	/** 설명 */
     @Column(length = 255)
     private String description;
-	
-	/** 등록일시 */
+    
+    /** 등록일시 */
     @CreationTimestamp
     private LocalDateTime createDate;
     
