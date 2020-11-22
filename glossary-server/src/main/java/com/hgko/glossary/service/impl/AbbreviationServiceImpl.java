@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hgko.glossary.domain.db.Abbreviation;
+import com.hgko.glossary.domain.param.SearchParam;
 import com.hgko.glossary.repository.AbbreviationRepository;
 import com.hgko.glossary.service.AbbreviationService;
 
@@ -54,5 +55,15 @@ public class AbbreviationServiceImpl implements AbbreviationService {
 	
 	private boolean isNew(Abbreviation domain) {
 		return !abbreviationRepository.existsById(domain.getId());
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<Abbreviation> getList(SearchParam param) {
+		if (param.getName() != null && !param.getName().isEmpty()) {
+			return abbreviationRepository.findByNameContaining(param.getName());
+		}
+		
+		return getList();
 	}
 }

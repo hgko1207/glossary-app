@@ -24,7 +24,7 @@ import lombok.Data;
  */
 @Data
 @Entity
-@Table(name = "tb_ㅁbbreviation")
+@Table(name = "tb_abbr")
 public class Abbreviation implements Domain {
 
 	@Id

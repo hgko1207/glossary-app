@@ -47,6 +47,14 @@ public class WordController {
 	}
 	
 	/**
+	 * 등록 화면
+	 * @param model
+	 */
+	@GetMapping("regist")
+    public void regist(Model model) {
+    }
+	
+	/**
 	 * 단어 등록
 	 * @param word
 	 * @return

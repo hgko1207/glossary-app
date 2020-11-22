@@ -45,6 +45,14 @@ public class TermController {
 	public ResponseEntity<?> list(SearchParam param) {
 		return new ResponseEntity<>(termService.getList(param), HttpStatus.OK);
 	}
+
+	/**
+	 * 등록 화면
+	 * @param model
+	 */
+	@GetMapping("regist")
+    public void regist(Model model) {
+    }
 	
 	/**
 	 * 용어 등록

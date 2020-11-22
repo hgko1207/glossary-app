@@ -10,7 +10,7 @@
 	    	<div class="page-header-content header-elements-md-inline">
 				<div class="page-title d-flex">
 					<h4>
-						<i class="icon-stack mr-3"></i><span class="font-weight-bold">용어 관리</span>
+						<i class="icon-stack mr-3"></i><span class="font-weight-bold">약어 관리</span>
 					</h4>
 				</div>
 			</div>
@@ -20,7 +20,7 @@
 						<a th:href="@{/home}" class="breadcrumb-item">
 							<i class="icon-home2 mr-2"></i> Home
 						</a>
-						<span class="breadcrumb-item active">용어 관리</span>
+						<span class="breadcrumb-item active">약어 관리</span>
 					</div>
 				</div>
 			</div>
@@ -40,7 +40,7 @@
 						</div>
 						<div class="card-body">
 							<div class="form-group">
-								<input type="search" class="form-control" placeholder="용어 명" name="name" autocomplete="off">
+								<input type="search" class="form-control" placeholder="약어 명" name="name" autocomplete="off">
 							</div>
 							<button type="button" id="searchBtn" class="btn bg-teal-400 btn-block">
 								<i class="icon-search4 mr-2"></i>검 색
@@ -50,18 +50,14 @@
     			</div>
     			<div class="col-md-10">
     				<div class="card">
-    					<div class="card-header header-elements-inline">
-    						<h5 class="card-title">용어 목록</h5>
-    						<div class="header-elements">
-    							<a th:href="@{/term/regist}" class="btn bg-blue-400"><i class="icon-pencil5 mr-2"></i>용어 등록</a>
-							</div>
+    					<div class="card-header">
+    						<h5 class="card-title">약어 목록</h5>
     					</div>
-    					<table class="table table-bordered" id="termTable">
+    					<table class="table table-bordered" id="abbrTable">
 							<thead class="text-center">
 								<tr class="table-active">
-									<th>한글명</th>
-									<th>영문명</th>
-									<th>구분</th>
+									<th>약어 명</th>
+									<th>약어 풀이</th>
 									<th>설명</th>
 									<th>Actions</th>
 								</tr>
@@ -75,6 +71,6 @@
     </th:block>
     
     <th:block layout:fragment="script">
-    	<script th:src="@{/js/page/term.js}"></script>
+    	<script th:src="@{/js/page/abbr.js}"></script>
     </th:block>
 </html>
